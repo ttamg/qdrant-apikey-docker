@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    volumes:
+      - QDRANT_STORAGE:/qdrant/storage
+
+  nginx:
+    image: nginx:mainline-alpine
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - qdrant
+
+volumes:
+  QDRANT_STORAGE:
+    name: QDRANT_STORAGE
