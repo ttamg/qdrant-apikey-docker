@@ -23,6 +23,14 @@ The API key should be supplied in the request headers as `api-key: TOKEN`
 
 This configuration also imposes rate limiting on the IP address to limite DDoS attacks.
 
+## Example - connecting using Curl
+
+To connect add a `api-key: TOKEN` header in curl.  For example
+
+```bash
+curl -v -H 'api-key: TOKEN' https://qdrant.example.com/
+```
+
 ## Example - connecting using the Qdrant client
 
 To use the Python `qdrant-client` API, just use the `api-key` in the same way as in the cloud setup. 
