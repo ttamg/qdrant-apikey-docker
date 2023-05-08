@@ -11,6 +11,8 @@ services:
     image: nginx:mainline-alpine
     volumes:
       - ./nginx-conf:/etc/nginx/conf.d
+    ports:
+      - "80:80"
     depends_on:
       - qdrant
 
